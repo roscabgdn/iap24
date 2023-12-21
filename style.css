@@ -1,0 +1,71 @@
+/*
+Theme Name: IAP24
+Theme URI: #
+Author: Rosca Bogdan
+Author URI: https://rbpixel.com/
+Description: Custom WP Theme
+Requires at least: 5.9
+Tested up to: 6.4
+Requires PHP: 7.1
+Version: 1.0
+Text Domain: iap24
+*/
+
+:root {
+    --brand-black: #232536;
+    --brand-yellow: #FFD050;
+    --brand-purple: #592EA9;
+    --brand-dark-grey: #4C4C4C;
+    --brand-medium-grey: #6D6E76;
+    --brand-light-grey: #F4F4F4;
+    --brand-lavender: #F4F0F8;
+    --brand-lavender: #F4F0F8;
+    --brand-light-yellow: #FFD050;
+    
+    --button-color: var(--brand-yellow);
+    --button-color-hover: #EDC14A;
+
+    --text-color: var(--brand-black);
+    --text-link-color: var(--brand-yellow);
+    --text-link-hover: #EDC14A;
+
+    --h1-font-size: 48px;
+    --h1-line-height: 64px;
+
+    --h2-font-size: 36px;
+    --h2-line-height: 48px;
+
+    --h3-font-size: 28px;
+    --h3-line-height: 36px;
+
+    --h4-font-size: 24px;
+    --h4-line-height: 32px;
+
+    --h5-font-size: 20px;
+    --h5-line-height: 32px;
+
+    --h6-font-size: 16px;
+    --h5-line-height: 24px;
+
+    --p-font-size: 16px;
+    --p-line-height: 28px;
+    --p-small-font-size: 14px;
+    --p-small-line-height: 20px;
+
+
+}
+body {
+    font-family: Sen;
+}
+h1 {
+    font-size: var(--h1-font-size);
+    font-weight: 700;
+    line-height: var(--h1-line-height); /* 133.333% */
+    letter-spacing: -2px;
+}
+h2 {
+    font-size: var(--h2-font-size);
+    font-weight: 700;
+    line-height: var(--h2-line-height); /* 133.333% */
+    letter-spacing: -2px;
+}
