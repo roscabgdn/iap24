@@ -77,7 +77,7 @@ function adrc_scripts() {
 	wp_enqueue_style( 'iap-reset', get_template_directory_uri() . '/assets/css/reset.local.css', array(), IAP_VERSION );
 	wp_enqueue_style( 'iap-normalize', get_template_directory_uri() . '/assets/css/normalize.css', array(), IAP_VERSION );
 	
-	wp_enqueue_style( 'iap-style', get_stylesheet_uri(), array(), IAP_VERSION );
+	wp_enqueue_style( 'iap-style', get_stylesheet_uri(), array(), rand(1,255) );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

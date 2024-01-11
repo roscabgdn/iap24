@@ -11,6 +11,26 @@ Version: 1.0
 Text Domain: iap24
 */
 
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+---------------------------------------------------------------- 
+# Normalize
+# Variables
+# Document Setup
+# Typography
+# Forms
+# Components
+	## Lists
+	## Tables
+# Navigation
+	## Links
+	## Menus
+# Layout
+	## Header
+	## Main Content
+	## Footer
+*/
 :root {
     --brand-black: #232536;
     --brand-yellow: #FFD050;
@@ -52,11 +72,54 @@ Text Domain: iap24
     --p-small-font-size: 14px;
     --p-small-line-height: 20px;
 
+    --main-font: 'Sen';
+    --main-container-width: 1280px;
+
 
 }
-body {
-    font-family: Sen;
+
+/*--------------------------------------------------------------
+# Document Setup
+--------------------------------------------------------------*/
+
+html {
+	scroll-behavior: smooth;
 }
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+body {
+	background: #FFF;	
+	color: var(--brand-medium-gray);
+	font-family: var(--main-font);
+	line-height: var(--p-line-height);
+	font-size: var(--p-font-size);
+}
+
+@supports ( font-variation-settings: normal ) {
+	body {
+		font-family: var(--main-font), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+	}
+}
+
+.container {
+    max-width: 1440px;
+    width: 100%;
+    padding:0 80px;
+    margin: 0 auto;
+}
+img {
+    max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
 h1 {
     font-size: var(--h1-font-size);
     font-weight: 700;
@@ -68,4 +131,111 @@ h2 {
     font-weight: 700;
     line-height: var(--h2-line-height); /* 133.333% */
     letter-spacing: -2px;
+}
+h3 {
+
+}
+
+
+/*--------------------------------------------------------------
+# Navigation
+	## Links
+	## Menus
+--------------------------------------------------------------*/
+.site-navigation ul {
+    display: flex;
+    align-items: center;
+    gap:24px;
+}
+.site-navigation a {
+    color:#FFF;
+    font-weight: 400;
+}
+.site-navigation li.current-menu-item a,
+.site-navigation a:hover {
+    color:var(--brand-yellow);
+}
+.site-navigation ul li:last-child {
+    padding-left: 8px;
+}
+.site-navigation ul li:last-child a {
+    background-color: #FFF;
+    color:var(--brand-black);
+    padding: 16px 48px;
+    font-weight: 700;
+    display: inline-block;
+    line-height: 135%;
+    transition: background-color 500ms;
+}
+.site-navigation ul li:last-child a:hover {
+    background-color: var(--brand-yellow);    
+}
+
+/*--------------------------------------------------------------
+# Layout ## Header
+--------------------------------------------------------------*/
+
+.site-header {
+    background-color: var(--brand-black);
+    padding: 12px 0;
+    
+}
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.site-header svg {
+    display: block;
+}
+
+
+/*--------------------------------------------------------------
+# Layout ## Footer
+--------------------------------------------------------------*/
+
+
+.site-footer {
+    background-color: var(--brand-black);
+    padding:59px 0 56px;
+}
+
+.site-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-navigation ul {
+    display: flex;
+    align-items: center;
+    gap:24px;
+}
+.footer-navigation a {
+    color:#FFF;
+    font-weight: 400;
+}
+.footer-navigation li.current-menu-item a,
+.footer-navigation a:hover {
+    color:var(--brand-yellow);
+}
+
+.site-footer .footer-contact {
+    color:#FFF;
+    opacity: 0.7;
+}
+
+.site-footer .footer-social-media ul {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+.site-footer .footer-social-media ul li a svg {
+    fill:#FFF;
+    opacity: 0.7;
+    transition: fill 500ms;
+}
+.site-footer .footer-social-media ul li a:hover svg{
+    fill:var(--brand-yellow);
+    opacity: 1;
 }
