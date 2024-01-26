@@ -3,7 +3,7 @@ Theme Name: IAP24
 Theme URI: #
 Author: Rosca Bogdan
 Author URI: https://rbpixel.com/
-Description: Custom WP Theme
+Description: Custom WP Theme for IAP
 Requires at least: 5.9
 Tested up to: 6.4
 Requires PHP: 7.1
@@ -74,7 +74,7 @@ Text Domain: iap24
 
     --main-font: 'Sen';
     --main-container-width: 1280px;
-
+    --main-gap:32px;
 
 }
 
@@ -133,7 +133,10 @@ h2 {
     letter-spacing: -2px;
 }
 h3 {
-
+    font-size: var(--h3-font-size);
+    font-weight: 700;
+    line-height: var(--h3-line-height); /* 133.333% */
+    letter-spacing: -2px;
 }
 
 
@@ -189,6 +192,46 @@ h3 {
     display: block;
 }
 
+/*--------------------------------------------------------------
+# Layout ## Main Content
+--------------------------------------------------------------*/
+
+.site-main .article {
+    display: grid;
+    grid-template-columns: 490px 1fr;
+    grid-gap:var(--main-gap);
+}
+
+.article_title {
+    color:var(--brand-black);
+    font-size: var(--h2-font-size);
+    line-height: var(--h2-line-height);
+    letter-spacing: -2px;
+    font-weight: bold;
+}
+.article_title a:hover {
+    color: var(--brand-yellow);
+}
+.article_excerpt {
+    color:var(--brand-medium-gray);
+    font-size:var(--p-font-size);
+    line-height:var(--p-line-height);
+}
+.article_category a {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color:var(--brand-purple);
+    font-weight: 600;
+}
+.article_category a:hover {
+    color: var(--brand-yellow);
+}
+
+.article_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 /*--------------------------------------------------------------
 # Layout ## Footer

@@ -40,6 +40,8 @@ function iap_setup() {
     * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
     */
 	add_theme_support( 'post-thumbnails' );
+	add_image_size( 'blog-article-size', 490, 318 );
+	add_image_size( 'blog-detail-size', 1280, 582, $crop = true );
 
     // This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
@@ -73,7 +75,7 @@ add_action( 'after_setup_theme', 'iap_setup' );
 /**
  * Enqueue scripts and styles.
  */
-function adrc_scripts() {
+function iap24_scripts() {
 	wp_enqueue_style( 'iap-reset', get_template_directory_uri() . '/assets/css/reset.local.css', array(), IAP_VERSION );
 	wp_enqueue_style( 'iap-normalize', get_template_directory_uri() . '/assets/css/normalize.css', array(), IAP_VERSION );
 	
@@ -83,5 +85,10 @@ function adrc_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'adrc_scripts' );
+add_action( 'wp_enqueue_scripts', 'iap24_scripts' );
+
+function iap_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'iap_excerpt_length', 999 );
 
